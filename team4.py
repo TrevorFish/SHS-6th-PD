@@ -17,23 +17,7 @@ def move(my_history, their_history, my_score, their_score):
     Make my move.
     Returns 'c' or 'b'. 
     '''
-    global Move_B
-   
-    global Initial_Move
     
-    def Move_B (their_history):
-        global Move_B
-        Move_B = False
-        if their_history[-1]== 'b':
-            Move_B = True
-    
-    
-            
-    def Initial_Move (my_history):
-        global Initial_Move
-        Initial_Move = False
-        if len(my_history)==0:
-            Initial_Move = True
             
                 
          
@@ -46,15 +30,11 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-
+    if len(my_history)==0:
+        return 'c'
+        
+    if their_history(-1)=='c':
+        return 'c' 
     
-    if Initial_Move:
-        return 'c'
-   
-   
-    if Move_B:
-        return 'b'
-        
-    else:
-        return 'c'
-        
+    if their_history(-1)=='b':
+        return 'b' 
